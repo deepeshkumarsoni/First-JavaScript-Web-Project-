@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Login Form </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-tiny-pubsub/0.7.0/ba-tiny-pubsub.min.js">
+    </script>
+</head>
+<body class="container">
+
+    <h1> LOGIN FORM </h1>
+   
+    <form class="form">
+        
+        <div class="form-group">
+            <label for="">User_Name :</label>
+            <input type="text" placeholder="Enter Your Name Here" 
+            id="name">
+        </div>   <br><br>
+        <div class="form-group"> 
+            <label for="">Email_ID :</label>
+            <input type="text" placeholder="Enter Your Email_ID Here" 
+            id="emailId">
+        </div>  <br><br>
+    </form>
+
+    <button class="btn btn-primary" id="submit">SUBMIT</button>
+    
+    <script src="app/user.js"></script>
+    <script src="app/msg.js"></script>
+    <script src="app/store.js"></script> 
+    <script src="app/user_validator.js"></script>  
+    <script src="app/user_controller.js"></script>
+         
+</body>
+</html>
