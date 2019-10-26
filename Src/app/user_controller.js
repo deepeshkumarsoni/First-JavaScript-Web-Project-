@@ -21,19 +21,20 @@ function onSuccessfullValidation()
 
 }
 
+function onValidationFailed() 
+{
+    $('#submit').attr('disabled','disabled');
+    console.log("User_Controller_Subscribe :",message.addUserFormValidationFailed);
+    console.log("Becarefull While Entering The Data");
+
+}
+
+
 function addUser() 
 {
     store.addUserInStore(user);
     console.log("User_Controller_Publish :", message.addUserSuccessfully);
 }
-
-
-function onValidationFailed() 
-{
-    $('#submit').attr('disable', true);
-    console.log("User_Controller_Publish :",message.addUserFormValidationFailed);
-}
-
 
 function onFormUpdate(event)
  {
