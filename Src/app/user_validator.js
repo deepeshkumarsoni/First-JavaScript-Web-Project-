@@ -6,7 +6,7 @@ $.subscribe(message.addUserFormUpdated,validate);
 
 function validate()
 {
-  console.log('user-validator received: ', message.addUserFormUpdated);
+  console.log('User_Validator_Subscribe :', message.addUserFormUpdated);
    
   var form = getUserFromStore();  // Give the form from the store
 
@@ -24,14 +24,14 @@ function checkIsFormValid(valid)
 {
     if (valid){
 
-        console.log('User Validator Recieved',
+        console.log('User_Validator_Publish :',
         message.addUserFormValidatedSuccessfully);
 
         $.publish(message.addUserFormValidatedSuccessfully);
     }
-    else{
+    else {
         
-        console.log('User Validator Recieved',
+        console.log('User_Validator_Publish :',
         message.addUserFormValidationFailed);
         
         $.publish(message.addUserFormValidationFailed);

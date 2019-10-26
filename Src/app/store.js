@@ -2,14 +2,16 @@
  * It Will Keep User State.
  */
 
- var initialState = {
+ var initialState = 
+ {
      userform : {},
      userList : []
  };
 
  var appState = initialState;
 
- var store = { 
+ var store = 
+ { 
     updateForm : function(form) 
     {
          appState.userform = form;

@@ -1,40 +1,42 @@
 /** All of the DOM Manipulation/Access */
 
-$(function () {
+$(function () 
+{
     $(".form").on('keyup', onFormUpdate);
     $("#submit").attr('disabled', 'disabled'),
     $.subscribe(message.addUserFormValidatedSuccessfully,
-        onSuccessfullyValidation),
-    $.subscribe(message.addUserFormValidationFailed,
-        onValidationFailed)
-   
-        
+    onSuccessfullValidation),
+    $.subscribe(message.addUserFormValidationFailed,onValidationFailed)
 });
 
 var $name = $('#name');
 var $emailId = $('#emailId');
 
 
-function onSuccessfullyValidation() {
+function onSuccessfullValidation() 
+{
     $('#submit').removeAttr('disabled');
+    console.log("User_Controller_Subscribe :",message.addUserFormValidatedSuccessfully);
     console.log("Click Submitt To Add USer");
 
 }
 
-function addUser() {
+function addUser() 
+{
     store.addUserInStore(user);
-    console.log("user controller publish", message.addUserSuccessfully);
+    console.log("User_Controller_Publish :", message.addUserSuccessfully);
 }
 
 
-function onValidationFailed() {
+function onValidationFailed() 
+{
     $('#submit').attr('disable', true);
-    console.log("user controller publish",
-        message.addUserFormValidationFailed);
+    console.log("User_Controller_Publish :",message.addUserFormValidationFailed);
 }
 
 
-function onFormUpdate(event) {
+function onFormUpdate(event)
+ {
     var user = new UserForm($name.val(), $emailId.val());
 
     console.log("onkeyup", user);
@@ -44,7 +46,8 @@ function onFormUpdate(event) {
     afterUpdate();
 }
 
-function afterUpdate() {
-    console.log('user_controller Publish', message.addUserFormUpdated);
+function afterUpdate()
+ {
+    console.log('User_Controller_Publish :', message.addUserFormUpdated);
     $.publish(message.addUserFormUpdated);
 }
