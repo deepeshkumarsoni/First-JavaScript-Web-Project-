@@ -22,7 +22,7 @@
         return appState.userform; 
     },
     
-    addUserInStore : function(form)
+    onAddUserInUser_List : function(form)
     {
         appState.userList = form;
         
