@@ -24,7 +24,12 @@
     
     onAddUserInUser_List : function(form)
     {
-        appState.userList = form;
-        
+        appState.userList.push(form);
+                
+    },
+
+    onGetUserFromList : function()        
+    {
+        return appState.userList;
     }
- };
+};

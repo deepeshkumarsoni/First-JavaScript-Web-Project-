@@ -8,16 +8,24 @@ $(function ()
     onSuccessfullValidation),
     $.subscribe(message.addUserFormValidationFailed,onValidationFailed),
     $("#submit").on('click',onAddUserInList),
-    $.subscribe(message.onAddUserSuccessfully,user_Added)
+    $.subscribe(message.onAddUserSuccessfully,onUserAdded)
 });
 
 var $name = $('#name');
 var $emailId = $('#emailId');
 
-function user_Added()
+function onUserAdded()
 {
-    console.log("Add_User_Subscribe :",message.onAddUserSuccessfully);
+    console.log("User_Controller_Subscribe :",message.onAddUserSuccessfully);
     alert("User Added Successfully In User List");
+    cleartext();
+    display.user_Display();
+}
+
+function cleartext()
+{
+    $("#name").val("");
+    $("#emailId").val("");
 }
 
 function onAddUserInList()

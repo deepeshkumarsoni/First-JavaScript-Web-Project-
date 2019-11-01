@@ -4,14 +4,24 @@
     <title> Login Form </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+   <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    rel="stylesheet" type="text/css">   -->
+
     <link href="main.css" rel="stylesheet" type="text/css">
+       
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous">
     </script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-tiny-pubsub/0.7.0/ba-tiny-pubsub.min.js">
     </script>
+    
+   <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    </script>  -->
 </head>
+
 <body class="container">
 
     <h1> LOGIN FORM </h1>
@@ -30,15 +40,38 @@
         </div>  <br><br>
     </form>
 
-    <button class="btn btn-primary" id="submit">SUBMIT</button>
-    
+    <button class="btn btn-primary" id="submit">SUBMIT</button><br><br>
+
+<center>   
+    <table id="table">
+        <h3> User_List </h3>
+        <thead>
+            <tr>
+                <th> S.No </th>
+                <th> User_Name </th>
+                <th> Email_ID </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> 1. </td>
+                <td id="tName"> Deepesh </td>
+                <td id="tEmail"> deepesh@gmail.com </td>
+            </tr>
+        </tbody>
+    </table>
+</center> 
+<!--
+<div id="output" style="width: 400px;" class="table table-bordered ">
+        
+</div>    -->
     <script src="app/user.js"></script>
     <script src="app/msg.js"></script>
     <script src="app/store.js"></script> 
     <script src="app/user_validator.js"></script>  
     <script src="app/add_user.js"></script>
     <script src="app/user_controller.js"></script>
-    <script src="app/delete_user.js"></script>
-         
+    <script src="app/display_user.js"></script>
+
 </body>
 </html>
