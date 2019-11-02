@@ -11,7 +11,6 @@ $(function ()
     $.subscribe(message.onAddUserSuccessfully,onUserAdded)
 });
 
-//var $id = uuidv4();
 var $name = $('#name');
 var $emailId = $('#emailId');
 
@@ -22,7 +21,7 @@ function onUserAdded()
     alert("User Added Successfully In User List");
     cleartext();
     userList();
-   // display.user_Display();
+
 }
 
 function cleartext()
