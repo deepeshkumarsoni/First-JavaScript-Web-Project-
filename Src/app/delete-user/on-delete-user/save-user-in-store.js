@@ -1,0 +1,25 @@
+/**
+ * Add User In Store List.
+ */
+
+$.subscribe(message.onAddUser,saveUserInStore);
+
+function saveUserInStore()
+{
+
+    console.log("Add_User_Subscribe :",message.onAddUser);
+
+    var user = getUserFromStore();
+    
+    store.onAddUserInUser_List(user);
+    console.log("onClick :",user);
+    
+    console.log('Add_User_Publish :',message.onAddUserSuccessfully);
+    $.publish(message.onAddUserSuccessfully);
+}
+
+
+function getUserFromStore()     
+{
+    return store.getUserForm();
+}

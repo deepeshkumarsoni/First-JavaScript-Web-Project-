@@ -2,9 +2,9 @@
  * Add User In Store List.
  */
 
-$.subscribe(message.onAddUser,onAddUserInStoreList);
+$.subscribe(message.onAddUser,saveUserInStore);
 
-function onAddUserInStoreList()
+function saveUserInStore()
 {
 
     console.log("Add_User_Subscribe :",message.onAddUser);
