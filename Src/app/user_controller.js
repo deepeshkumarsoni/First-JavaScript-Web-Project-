@@ -11,21 +11,25 @@ $(function ()
     $.subscribe(message.onAddUserSuccessfully,onUserAdded)
 });
 
+//var $id = uuidv4();
 var $name = $('#name');
 var $emailId = $('#emailId');
+
 
 function onUserAdded()
 {
     console.log("User_Controller_Subscribe :",message.onAddUserSuccessfully);
     alert("User Added Successfully In User List");
     cleartext();
-    display.user_Display();
+    userList();
+   // display.user_Display();
 }
 
 function cleartext()
 {
     $("#name").val("");
     $("#emailId").val("");
+    $("#submit").attr('disabled', 'disabled');
 }
 
 function onAddUserInList()
