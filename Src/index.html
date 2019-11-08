@@ -1,57 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title> Login Form </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
-    rel="stylesheet" type="text/css">   
 
-    <link href="main.css" rel="stylesheet" type="text/css">
-       
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous">
-    </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-tiny-pubsub/0.7.0/ba-tiny-pubsub.min.js">
-    </script>
-    
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
-    </script> 
+<head>
+  <title>User Registeration: JavaScript App</title>
+  <!-- <link rel="icon" href="favicon.ico?XXX" /> -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Add icon library
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-tiny-pubsub/0.7.0/ba-tiny-pubsub.min.js"></script> -->
+
+  <link rel="stylesheets" href="Client/main.css" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="Client/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-tiny-pubsub/0.7.0/ba-tiny-pubsub.min.js"></script>
+  
+  <style>
+    .navbar-custom {
+      background-color: darkorange;
+      }
+    body{
+        background-color: aqua;
+    }
+    #userList,th,td{
+        border: 2px solid black;
+    }
+  </style>
 </head>
 
-<body class="container">
+<body> 
 
-    <h1> LOGIN FORM </h1>   <br><br>
-   
-    <form class="form">
-        
-        <div class="form-group">
-            <label for="">User_Name :</label>
-            <input type="text" placeholder="Enter Your Name Here" 
-            id="name">
-        </div>   <br>
-        <div class="form-group"> 
-            <label for="">Email_ID :</label>
-            <input type="text" placeholder="Enter Your Email_ID Here" 
-            id="emailId">
-        </div>  <br><br>
+  <nav class="navbar navbar-custom">
+    <div class="container-fluid">
+      <!-- <div class="navbar-header"> <img src="favicon.ico" width="30" height="30" alt="" /> -->
+      </div>
+      <div>
+        <a class="navbar-brand" href="#" style="padding-left: 30px;">
+          User Registration
+        </a></div>
+    </div>
+
+  </nav>
+
+  <div class="container">
+    <div style="display:none;" role="alert" id="alertMsg">
+    </div>
+    <form class="form" id="userForm">
+      <!-- div.form-group>label{Name:}+input.form-control#name -->
+      <div class="form-group">
+        <label for="">Full Name:</label>
+        <input autofocus="autofocus" type="text" class="form-control" placeholder="Enter name" id="name">
+      </div>
+      <div class="form-group">
+        <label for="">Email:</label>
+        <input type="text" class="form-control" placeholder="Enter email" id="email">
+      </div>
     </form>
 
-    <button class="btn btn-primary" id="submit">SUBMIT</button><br><br>
-<center>
-    <div id="output" class="container">
-    </div>    
-</center>    
-    <script src="app/user.js"></script>
-    <script src="app/msg.js"></script>
-    <script src="app/store.js"></script> 
-    <script src="app/user_validator.js"></script>  
-    <script src="app/add_user.js"></script>
-    <script src="app/user_controller.js"></script>
-    <script src="app/display_user.js"></script>
+    <button class="btn btn-success" id="addUser" type="submit">Submit</button>
+    <br /><br />
+    
+    <table class="table table-bordered table-striped table-dark" id="userList">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Full Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!--Add User Rows-->
+      </tbody>
+
+    </table>
+
+  </div>
+
+  <script src="Client/app/user.js"></script>
+  <script src="Client/app/msg.js"></script>
+  <script src="Client/app/store.js"></script>
+  <script src="Client/app/1.publish-update-user.js"></script>
+  <script src="Client/app/2.update-user-in-userform.js"></script>
+  <script src="Client/app/3.user-form-validator.js"></script>
+  <script src="Client/app/4.check-user-validation-.js"></script>
+  <script src="Client/app/5.add-user-in-userlist.js"></script>
+  <script src="Client/app/6.show-user-in-table.js"></script>
+  <script src="Client/app/7.publish-delete-user.js"></script>
+  <script src="Client/app/8.delete-user-from-store.js"></script>
+  <script src="Client/app/9.delete-user-from-table.js"></script>
 
 </body>
 </html>

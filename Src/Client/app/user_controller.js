@@ -1,9 +1,11 @@
-/** All of the DOM Manipulation/Access */
+/** All of the DOM Manipulation/Access
+ * User_Controller : Abstraction over DOM.
+ 
 
 $(function () 
 {
-    $(".form").on('keyup', onFormUpdate),
-    $("#submit").attr('disabled', 'disabled'),
+    $("#userForm").on('keyup', formUpdated), // calling formUpdate function
+    $("#addUser").attr('disabled', 'disabled'),
     $.subscribe(message.addUserFormValidatedSuccessfully,
     onSuccessfullValidation),
     $.subscribe(message.addUserFormValidationFailed,onValidationFailed),
@@ -12,7 +14,7 @@ $(function ()
 });
 
 var $name = $('#name');
-var $emailId = $('#emailId');
+var $email = $('#email');
 
 
 function onUserAdded()
@@ -53,19 +55,21 @@ function onValidationFailed()
 
 }
 
-function onFormUpdate(event)
+function formUpdated(event)
  {
-    var user = new UserForm($name.val(), $emailId.val());
+    var user = new UserForm($name.val(), $email.val());
 
     console.log("onkeyup", user);
 
-    store.updateForm(user);
+    //store.updateForm(user);
 
     afterUpdate();
 }
 
 function afterUpdate()
  {
-    console.log('User_Controller_Publish :', message.addUserFormUpdated);
-    $.publish(message.addUserFormUpdated);
+    console.log('User_Controller_Publish :', message.userFormUpdated);
+    $.publish(message.userFormUpdated);
 }
+
+*/

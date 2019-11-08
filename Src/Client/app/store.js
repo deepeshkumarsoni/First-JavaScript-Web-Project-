@@ -22,7 +22,7 @@
         return appState.userform; 
     },
     
-    onAddUserInUser_List : function(form)
+    addUserInUser_List : function(form)
     {
         appState.userList.push(form);
                 
