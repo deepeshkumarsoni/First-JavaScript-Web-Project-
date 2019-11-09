@@ -1,11 +1,11 @@
 
-$.subscribe(UPDATED_USER_FORM_IS_VALID,onSuccessfullValidation);
+$.subscribe(UPDATED_USER_FORM_IS_VALID, onSuccessfullValidation);
 
 function onSuccessfullValidation() 
    {
-       $('#submit').removeAttr('disabled');
+       $('#addUser').removeAttr('disabled');
      //  console.log("User_Controller_Subscribe :",message.addUserFormValidatedSuccessfully);
-      console.log(UPDATED_USER_FORM_IS_VALID);
+      console.log(VALIDATION_SUCCESSFULL);
       alert("Click On Submitt Button To Add User In User List");
         
    }
@@ -13,12 +13,12 @@ function onSuccessfullValidation()
    //  store.addUserInUser_List(user);
    //  $publish(ADD_USER_SUCCESSFULL);
  
- $.subscribe(UPDATED_USER_FORM_IS_INVALID,onValidationFailed);
+ $.subscribe(UPDATED_USER_FORM_IS_INVALID, onValidationFailed);
 
  function onValidationFailed() 
 {
-    $('#submit').attr('disabled','disabled');
+    $('#addUser').attr('disabled','disabled');
  // console.log("User_Controller_Subscribe :",message.addUserFormValidationFailed);
-    console.log(UPDATED_USER_FORM_IS_INVALID);
+    console.log(VALIDATION_FAILED);
     alert("Becarefull While Entering The Data");
 }

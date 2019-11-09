@@ -1,11 +1,11 @@
 $(function() {
-    $('#addUser').on('click', addUserInUserList);
+    $('#addUser').on('click', addUserInUser_List);
 });
 
-function addUserInUserList() {
+function addUserInUser_List() {
     var user = store.getUserForm();
-    addUserInUser_List(user);  
+    addUserInUserList(user);  
     alert("User Added In User List Successfully");  
-    $.publish(ADD_USER_SUCCESSFULL,user);
+    $.publish(ADD_USER_SUCCESSFULL);
     
 }

@@ -40,31 +40,31 @@ function isUpdatedFormValid(user)
      return isUpdatedFormValid;
  }
 
-function isEmailValid(email) 
- {
-     if (
-         email.trim() !== '' &&
-         email.indexOf('@') > -1 &&
-         email.indexOf('.') > -1
-       )
-       {
-           return true;
-       }
-    return 'Email is invalid';
- }
+// function isEmailIsValid(email) 
+//  {
+//      if (
+//          email.trim() !== '' &&
+//          email.indexOf('@') > -1 &&
+//          email.indexOf('.') > -1
+//        )
+//        {
+//            return true;
+//        }
+//     return false;
+//  }
   
-  function isNameValid(name) {
-    if (name.trim() !== '' && name.length > 4) {
-      return true;
-    }
-    return 'Name is invalid';
-  }
-// function isNameIsValid(name)
-// {
-//     return !(name == null || name.trim() === '');  
-// }
+//   function isNameIsValid(name) {
+//     if (name.trim() !== '' && name.length > 4) {
+//       return true;
+//     }
+//     return false;
+//   }
+function isNameIsValid(name)
+{
+    return (name == null || name.trim() === '');  
+}
 
-// function isEmailIsValid(emailId)
-// {
-//     return !(emailId == null || emailId.trim() === ''); 
-// }
+function isEmailIsValid(emailId)
+{
+    return (emailId == null || emailId.trim() === ''); 
+}

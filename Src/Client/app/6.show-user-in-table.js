@@ -1,8 +1,9 @@
 
 $.subscribe(ADD_USER_SUCCESSFULL,showUserInTable);
 
-function showUserInTable(user) {
+function showUserInTable() {
     // get the body of table
+    var user = store.onGetUserFromList();
     const $tableBody = $('#userList').find('tbody');
   
     // create a tr
