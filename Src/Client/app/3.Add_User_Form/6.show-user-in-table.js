@@ -1,10 +1,13 @@
+/**
+ * Controller : Abstraction over DOM.
+ */
 
-$.subscribe(ADD_USER_SUCCESSFULL,showUserInTable);
+$.subscribe(ADD_USER_SUCCESSFULL,showUserInTable);   //subscribing the published message.
 
-function showUserInTable(topic,user) {
+function showUserInTable(topic,user) {     //passing the user object in a function.
     // get the body of table
     
-    const $tableBody = $('#userList').find('tbody');
+    const $tableBody = $('#userList').find('tbody');  //fetching table from DOM.
   
     // create a tr
     const $tr = $(
@@ -26,5 +29,5 @@ function showUserInTable(topic,user) {
     // clear input
     $('#name,#email').val('');
   
-    $.publish(SHOW_SUCCESS,`Congrats ${user.name} added successfully!`);
+    $.publish(SHOW_SUCCESS,`Congrats ${user.name} added successfully!`);   //publish the message on console. 
 }
