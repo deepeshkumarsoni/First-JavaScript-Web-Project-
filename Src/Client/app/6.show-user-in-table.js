@@ -1,9 +1,9 @@
 
 $.subscribe(ADD_USER_SUCCESSFULL,showUserInTable);
 
-function showUserInTable() {
+function showUserInTable(topic,user) {
     // get the body of table
-    var user = store.onGetUserFromList();
+    
     const $tableBody = $('#userList').find('tbody');
   
     // create a tr
@@ -26,5 +26,5 @@ function showUserInTable() {
     // clear input
     $('#name,#email').val('');
   
-    $.publish(SHOW_SUCCESS, `Congrats ${user.name} added successfully!`);
+    $.publish(SHOW_SUCCESS,`Congrats ${user.name} added successfully!`);
 }

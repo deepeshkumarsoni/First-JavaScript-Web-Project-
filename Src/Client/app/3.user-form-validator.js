@@ -3,20 +3,19 @@
  * User_Validator : Abstraction over 
  */
 
-$.subscribe(ADD_USER_FORM_UPDATED,validateUpdatedForm);
+$.subscribe(ADD_USER_FORM_UPDATED, validateUpdatedForm);
 
-function validateUpdatedForm(user)
- {
-     var valid = isUpdatedFormValid(user);  // check whether user name & email are valid or not.
-     checkIsFormValid(valid);   // check whether the Form is valid or not.
-   
-     //console.log('User_Validator_Subscribe :', message.addUserFormUpdated);
-     //var form = getUserFromStore();  // Give the form from the store
- }
+function validateUpdatedForm(topic,user) {
+    
+    var valid = isUpdatedFormValid(user);  // check whether user name & email are valid or not.
+    checkIsFormValid(valid);   // check whether the Form is valid or not.
 
-function checkIsFormValid(valid)
-{
-    if (valid){
+    //console.log('User_Validator_Subscribe :', message.addUserFormUpdated);
+    //var form = getUserFromStore();  // Give the form from the store
+}
+
+function checkIsFormValid(valid) {
+    if (valid) {
         console.log(UPDATED_USER_FORM_IS_VALID);
         $.publish(UPDATED_USER_FORM_IS_VALID);
         // console.log('User_Validator_Publish :',
@@ -26,45 +25,42 @@ function checkIsFormValid(valid)
 
     else {
         console.log(UPDATED_USER_FORM_IS_INVALID);
-        $.publish(UPDATED_USER_FORM_IS_INVALID);       
+        $.publish(UPDATED_USER_FORM_IS_INVALID);
         // console.log('User_Validator_Publish :',
         // message.addUserFormValidationFailed);        
         // $.publish(message.addUserFormValidationFailed);
     }
 }
 
-function isUpdatedFormValid(user)
+function isUpdatedFormValid(user) {
+    var isUpdatedFormValid = isNameIsValid(user.name) &&
+        isEmailIsValid(user.email);
+    return isUpdatedFormValid;
+}
+
+function isEmailIsValid(email) 
  {
-     var isUpdatedFormValid = isNameIsValid(user.name) && 
-     isEmailIsValid(user.email);
-     return isUpdatedFormValid;
+     if (
+         email.trim() !== '' &&
+         email.indexOf('@') > -1 &&
+         email.indexOf('.') > -1
+       )
+       {
+           return true;
+       }
+    return false;
  }
 
-// function isEmailIsValid(email) 
-//  {
-//      if (
-//          email.trim() !== '' &&
-//          email.indexOf('@') > -1 &&
-//          email.indexOf('.') > -1
-//        )
-//        {
-//            return true;
-//        }
-//     return false;
-//  }
-  
-//   function isNameIsValid(name) {
-//     if (name.trim() !== '' && name.length > 4) {
-//       return true;
-//     }
-//     return false;
-//   }
-function isNameIsValid(name)
-{
-    return (name == null || name.trim() === '');  
-}
+  function isNameIsValid(name) {
+    if (name.trim() !== '' && name.length > 4) {
+      return true;
+    }
+    return false;4
+  }
+// function isNameIsValid(name) {
+//     return !(name == null || name.trim() === '');
+// }
 
-function isEmailIsValid(emailId)
-{
-    return (emailId == null || emailId.trim() === ''); 
-}
+// function isEmailIsValid(emailId) {
+//     return !(emailId == null || emailId.trim() === '');
+// }

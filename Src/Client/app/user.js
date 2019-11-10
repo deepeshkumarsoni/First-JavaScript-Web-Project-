@@ -6,14 +6,14 @@ function UserForm(name,email)
 {
     this.id = Date.now().toString();    //randonNo();
     this.name = name;
-    this.emailId = email;                                                
+    this.email = email;                                                
 }
 
 function User(name,email)
 {
     this.id = Date.now().toString();        
     this.name = name;
-    this.emailId = email;
+    this.email = email;
 }
 
 // function randonNo() {

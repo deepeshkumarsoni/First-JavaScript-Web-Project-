@@ -1,7 +1,7 @@
 
 $.subscribe(UPDATE_USER,updatedUserForm);
 
-function updatedUserForm(user)
+function updatedUserForm(topic,user)
  {     
     store.updateForm(user);
     console.log(ADD_USER_FORM_UPDATED, user);

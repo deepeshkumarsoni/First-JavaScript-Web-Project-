@@ -1,6 +1,7 @@
 
 $(function() {
-    $('#userList').delegate('.delete-user', 'click', publishDeleteUser);
+  // $('#delete').on('click', publishDeleteUser);
+  $('#userList').delegate('.delete-user', 'click', publishDeleteUser);
 });
 
 function publishDeleteUser() {

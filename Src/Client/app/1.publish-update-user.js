@@ -9,9 +9,10 @@ $(function() {
   
 function addUserInUserList()
  {
-    const $name = $('#name').val();
-    const $email = $('#email').val();
-    const user = new UserForm($name, $email);
-    console.log(ADD_USER ,':', user);
+  // var $name = $('#name');
+    const name = $('#name').val();
+    const email = $('#email').val();
+    const user = new UserForm(name,email);
+    console.log(UPDATE_USER ,':', user);
     $.publish(UPDATE_USER, user);
  }
